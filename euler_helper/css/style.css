@@ -1,0 +1,17 @@
+body {
+  background-color: beige;
+  font-family: "Calibri";
+}
+
+h1, h3 {
+  text-align: center;
+}
+
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  border: solid;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
