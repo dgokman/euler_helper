@@ -50,13 +50,9 @@ function init() {
   pnthnum.onchange = function(){
     //validate input
     if (validateNum(this)) return;
-    if (parseInt(this.value) > 9592) {
-      alert("sorry, this prime exceeds the limit");
-      return;
-    }
     //calculate if value is number
-    generatePrimes();
-    var nthprime = prime_arr[parseInt(document.getElementById("primenth").value) - 1];
+    generatePrimes(parseInt(this.value));
+    var nthprime = prime_arr[parseInt(this.value) - 1];
     document.getElementById("primenthnum").innerHTML = nthprime;
   }
 
@@ -69,8 +65,8 @@ function init() {
     }
   }
 
-  function generatePrimes() {
-    for (var x=3; x < 100000; x += 2) {
+  function generatePrimes(n) {
+    for (var x=3; prime_arr.length <= n; x += 2) {
       if (isPrime(x)) prime_arr.push(x);
     }
   }
